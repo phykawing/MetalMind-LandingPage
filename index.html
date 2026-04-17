@@ -751,6 +751,112 @@
   .reveal:nth-child(3) { transition-delay: 0.16s; }
   .reveal:nth-child(4) { transition-delay: 0.24s; }
 
+  /* ─── EBITDA MODEL ─── */
+  .ebitda { background: rgba(237,252,250,0.72); }
+  .ebitda-intro {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 680px;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+  .ebitda .kpi-row { margin-bottom: 3rem; margin-top: 0; }
+  .kpi-card.highlight-card { border-color: var(--accent); }
+  .ebitda-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .ebitda-chart-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem;
+  }
+  .ebitda-chart-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.25rem;
+  }
+  .ebitda-chart-card .chart-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+  .ebitda-table-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+  .ebitda-table-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .ebitda-table-wrap thead { background: var(--accent-dim); }
+  .ebitda-table-wrap th {
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border);
+  }
+  .ebitda-table-wrap th:not(:first-child) { text-align: right; }
+  .ebitda-table-wrap td {
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+  }
+  .ebitda-table-wrap td:not(:first-child) {
+    text-align: right;
+    font-family: 'Consolas', monospace;
+    font-size: 0.85rem;
+  }
+  .ebitda-table-wrap tr:last-child td { border-bottom: none; }
+  .ebitda-table-wrap tbody tr:hover { background: rgba(13,172,241,0.05); }
+  .ebitda-table-wrap .row-label { color: var(--text-primary); font-weight: 500; }
+  .ebitda-table-wrap .ebitda-row td {
+    color: #0457cb;
+    font-weight: 700;
+    border-top: 2px solid var(--border);
+  }
+  .ebitda-table-wrap .improvement-row td { color: var(--violet-2); font-weight: 700; }
+  .ebitda-table-wrap .savings-cell { color: var(--violet-2); }
+  .ebitda-table-wrap .delta-col { color: var(--violet-2); }
+  .assumptions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .assumption-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    transition: border-color 0.3s;
+  }
+  .assumption-card:hover { border-color: rgba(13, 172, 241, 0.40); }
+  .assumption-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.35rem;
+  }
+  .assumption-value {
+    font-family: 'Consolas', monospace;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .assumption-value.accent { color: var(--accent); }
+  .assumption-value.teal { color: var(--violet-2); }
+
   /* ─── RESPONSIVE ─── */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
@@ -760,6 +866,9 @@
     .solution-content { grid-template-columns: 1fr; gap: 2rem; }
     .hero-ctas { flex-direction: column; align-items: center; }
     .pricing-layout { grid-template-columns: 1fr; }
+    .ebitda-grid { grid-template-columns: 1fr; }
+    .ebitda-table-wrap { overflow-x: auto; }
+    .assumptions-grid { grid-template-columns: 1fr 1fr; }
     .growth-grid { grid-template-columns: 1fr; }
     .kpi-row { grid-template-columns: 1fr 1fr; }
     .team-grid { grid-template-columns: 1fr 1fr; }
@@ -779,6 +888,7 @@
     <a href="#problem">Problem</a>
     <a href="#solution">Solution</a>
     <a href="#demo">Demo</a>
+    <a href="#ebitda">EBITDA Model</a>
     <a href="#pricing">Pricing</a>
     <a href="#growth">Growth</a>
     <a href="#team">Team</a>
@@ -872,6 +982,144 @@
             <p>Continuously updated from RFQs, web intelligence, and market feeds — providing reasoning, not just data.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EBITDA MODEL -->
+<section class="ebitda" id="ebitda">
+  <div class="container">
+    <div class="section-label">Financial Impact</div>
+    <h2>EBITDA Improvement Model</h2>
+    <p class="ebitda-intro">A transparent look at how MetalMind AI drives bottom-line impact — modelled on a $10M annual revenue import operation with real-world cost structures.</p>
+
+    <!-- KPI HIGHLIGHTS -->
+    <div class="kpi-row">
+      <div class="kpi-card">
+        <div class="kpi-value">$10.5M</div>
+        <div class="kpi-label">Revenue with AI</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">$120K</div>
+        <div class="kpi-label">Freight Savings</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">$90K</div>
+        <div class="kpi-label">Compliance Savings</div>
+      </div>
+      <div class="kpi-card highlight-card">
+        <div class="kpi-value">$710K</div>
+        <div class="kpi-label">EBITDA Improvement</div>
+      </div>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="ebitda-grid">
+      <div class="ebitda-chart-card">
+        <h3>Cost Comparison</h3>
+        <p class="chart-subtitle">Baseline vs. With MetalMind AI</p>
+        <div class="chart-area">
+          <canvas id="costChart"></canvas>
+        </div>
+      </div>
+      <div class="ebitda-chart-card">
+        <h3>EBITDA Impact</h3>
+        <p class="chart-subtitle">+$710K improvement (+28.4%)</p>
+        <div class="chart-area">
+          <canvas id="ebitdaChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- FULL TABLE -->
+    <div class="ebitda-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Baseline</th>
+            <th>With MetalMind AI</th>
+            <th>Delta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-label">Revenue</td>
+            <td>$10,000,000</td>
+            <td>$10,500,000</td>
+            <td class="delta-col">+$500,000</td>
+          </tr>
+          <tr>
+            <td class="row-label">COGS (Base)</td>
+            <td>$6,000,000</td>
+            <td>$6,000,000</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="row-label">Freight &amp; Logistics</td>
+            <td>$1,200,000</td>
+            <td class="savings-cell">$1,080,000</td>
+            <td class="delta-col">−$120,000</td>
+          </tr>
+          <tr>
+            <td class="row-label">Customs &amp; Compliance</td>
+            <td>$300,000</td>
+            <td class="savings-cell">$210,000</td>
+            <td class="delta-col">−$90,000</td>
+          </tr>
+          <tr class="ebitda-row">
+            <td class="row-label">Total Costs</td>
+            <td>$7,500,000</td>
+            <td>$7,290,000</td>
+            <td class="delta-col">−$210,000</td>
+          </tr>
+          <tr class="ebitda-row">
+            <td class="row-label">EBITDA</td>
+            <td>$2,500,000</td>
+            <td>$3,210,000</td>
+            <td class="delta-col">+$710,000</td>
+          </tr>
+          <tr class="improvement-row">
+            <td class="row-label">EBITDA Margin</td>
+            <td>25.0%</td>
+            <td>30.6%</td>
+            <td class="delta-col">+5.6 pts</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ASSUMPTIONS -->
+    <div class="section-label" style="margin-bottom: 1rem;">Model Assumptions</div>
+    <div class="assumptions-grid">
+      <div class="assumption-card">
+        <div class="assumption-label">Annual Revenue</div>
+        <div class="assumption-value">$10,000,000</div>
+      </div>
+      <div class="assumption-card">
+        <div class="assumption-label">COGS</div>
+        <div class="assumption-value">$6,000,000</div>
+      </div>
+      <div class="assumption-card">
+        <div class="assumption-label">Freight Cost Rate</div>
+        <div class="assumption-value">12%</div>
+      </div>
+      <div class="assumption-card">
+        <div class="assumption-label">Customs &amp; Compliance Rate</div>
+        <div class="assumption-value">3%</div>
+      </div>
+      <div class="assumption-card">
+        <div class="assumption-label">AI Logistics Savings</div>
+        <div class="assumption-value teal">10%</div>
+      </div>
+      <div class="assumption-card">
+        <div class="assumption-label">AI Compliance Savings</div>
+        <div class="assumption-value teal">30%</div>
+      </div>
+      <div class="assumption-card">
+        <div class="assumption-label">Revenue Uplift (Reliability)</div>
+        <div class="assumption-value accent">+5%</div>
       </div>
     </div>
   </div>
@@ -1005,6 +1253,59 @@
       }
     }
   };
+
+  // ── EBITDA CHARTS ──
+  const ebitdaOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        display: true, position: 'top', align: 'end',
+        labels: {
+          color: tickColor, font: { size: 11, family: "'Segoe UI', system-ui" },
+          boxWidth: 12, boxHeight: 12, padding: 16,
+          usePointStyle: true, pointStyle: 'rectRounded'
+        }
+      },
+      tooltip: {
+        backgroundColor: '#ffffff', titleColor: '#1c2b33', bodyColor: '#4a6274',
+        borderColor: '#d8eef8', borderWidth: 1, cornerRadius: 8, padding: 12,
+        callbacks: { label: ctx => ' ' + ctx.dataset.label + ': $' + (ctx.parsed.y / 1e6).toFixed(2) + 'M' }
+      }
+    },
+    scales: {
+      x: { grid: { color: gridColor }, ticks: { color: tickColor, font: { size: 11 } } },
+      y: { grid: { color: gridColor }, ticks: { color: tickColor, font: { size: 11 }, callback: v => '$' + (v / 1e6).toFixed(1) + 'M' } }
+    }
+  };
+
+  new Chart(document.getElementById('costChart'), {
+    type: 'bar',
+    data: {
+      labels: ['COGS', 'Freight', 'Compliance', 'Total Costs'],
+      datasets: [
+        { label: 'Baseline', data: [6000000, 1200000, 300000, 7500000],
+          backgroundColor: 'rgba(74,98,116,0.30)', borderColor: 'rgba(74,98,116,0.55)', borderWidth: 1, borderRadius: 4 },
+        { label: 'With MetalMind AI', data: [6000000, 1080000, 210000, 7290000],
+          backgroundColor: 'rgba(113,246,210,0.55)', borderColor: 'rgba(113,246,210,0.80)', borderWidth: 1, borderRadius: 4 }
+      ]
+    },
+    options: ebitdaOptions
+  });
+
+  new Chart(document.getElementById('ebitdaChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Revenue', 'Total Costs', 'EBITDA'],
+      datasets: [
+        { label: 'Baseline', data: [10000000, 7500000, 2500000],
+          backgroundColor: 'rgba(74,98,116,0.30)', borderColor: 'rgba(74,98,116,0.55)', borderWidth: 1, borderRadius: 4 },
+        { label: 'With MetalMind AI', data: [10500000, 7290000, 3210000],
+          backgroundColor: 'rgba(13,172,241,0.55)', borderColor: 'rgba(13,172,241,0.80)', borderWidth: 1, borderRadius: 4 }
+      ]
+    },
+    options: ebitdaOptions
+  });
 
   new Chart(document.getElementById('subscriberChart'), {
     type: 'bar',
