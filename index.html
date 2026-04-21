@@ -873,6 +873,43 @@
     .kpi-row { grid-template-columns: 1fr 1fr; }
     .team-grid { grid-template-columns: 1fr 1fr; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .partners-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ─── PARTNERS ─── */
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+    align-items: stretch;
+  }
+  .partner-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 32px rgba(13,172,241,0.10);
+  }
+  .partner-card img {
+    max-width: 100%;
+    max-height: 72px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .members-grid {
+    grid-template-columns: minmax(200px, 260px);
+    justify-content: center;
   }
 </style>
 </head>
@@ -1199,6 +1236,34 @@
       <div class="contact-item">
         ✉️ <a href="mailto:novolytics@gmail.com">novolytics@gmail.com</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS / COLLABORATION -->
+<section class="partners" id="partners">
+  <div class="container">
+    <div class="section-label">Partners &amp; Collaboration</div>
+    <h2>Backed by Industry &amp; Academic Leaders</h2>
+    <p class="section-desc">Working alongside the organisations helping us build and scale MetalMind AI.</p>
+
+    <div class="partners-grid">
+      <div class="partner-card reveal"><img src="Partners/msforstartups.png" alt="Microsoft for Startups"></div>
+      <div class="partner-card reveal"><img src="Partners/WSTI.jpeg" alt="WSTI"></div>
+      <div class="partner-card reveal"><img src="Partners/WSU.png" alt="Western Sydney University"></div>
+      <div class="partner-card reveal"><img src="Partners/AIH.jpeg" alt="AIH"></div>
+      <div class="partner-card reveal"><img src="Partners/NovoConnect.jpeg" alt="Novo Connect"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBER -->
+<section class="members" id="members">
+  <div class="container">
+    <div class="section-label">Member</div>
+    <h2>Member of</h2>
+    <div class="partners-grid members-grid">
+      <div class="partner-card reveal"><img src="Members/AMRFConnect.jpeg" alt="AMRF Connect"></div>
     </div>
   </div>
 </section>
